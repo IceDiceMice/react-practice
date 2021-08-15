@@ -1,10 +1,10 @@
 import React from 'react'
-import {BsPeopleCircle } from 'react-icons/bs'
 
-export default function Navbarmenu() {
+
+export default function Navbarmenu(props) {
     return (
        <nav className="navbar">
-           <ul className="navbar-nav"></ul>
+           <ul className="navbar-nav" >{props.children}</ul>
           
        </nav>
     )
