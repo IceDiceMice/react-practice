@@ -1,0 +1,136 @@
+.login-form {
+  width: 350px;
+  height: auto;
+  background: $dark-color;
+  font-size: 15px;
+  position: relative;
+  input {
+    width: 90%;
+    height: 40px;
+    border-radius: $border-radius;
+    font-size: 15px;
+    padding: 0 5px 0 5px;
+    outline: none;
+    border: none;
+    margin: 5px 0 5px 0;
+    background-color: $text-color;
+  }
+  h1 {
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+  button {
+    height: 40px;
+    width: 100px;
+    border: none;
+    background: $grey-color;
+    color: $text-color;
+    font-size: 15px;
+    border-radius: $border-radius;
+    border: $border;
+    margin-left: 216px;
+    &:hover {
+      background: $light-grey;
+    }
+  }
+  span {
+    cursor: pointer;
+    color: rgb(108, 148, 233);
+    margin-top: 20px;
+  }
+}
+.login-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sex-block {
+  width: 320px;
+  height: auto;
+  border-radius: $border-radius;
+  position: absolute;
+  top: 70%;
+  padding: 0 5px 0 5px;
+  outline: none;
+  border: none;
+  margin: 5px 0 5px 0;
+  background-color: $text-color;
+
+  li {
+    font-size: 15px;
+    font-family: Arial;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    border-radius: $border-radius;
+    padding: 0 5px 0 5px;
+    outline: none;
+    border: none;
+    margin: 5px 0 5px 0;
+    background-color: $text-color;
+    &:hover {
+      background: $light-grey;
+      color: $text-color;
+    }
+  }
+}
+.sex-option {
+  display: flex;
+  align-items: center;
+  font-family: Arial;
+  width: 90%;
+  height: 40px;
+  border-radius: $border-radius;
+  font-size: 15px;
+  padding: 0 5px 0 5px;
+  outline: none;
+  border: none;
+  margin: 5px 0 5px 0;
+  background-color: $text-color;
+  &:hover {
+    background: $light-grey;
+    color: $text-color;
+  }
+}
+.title {
+  width: fit-content;
+  color: $dark-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  font-size: 60px;
+  font-family: "Monotype Corsiva", cursive;
+  height: fit-content;
+  margin-bottom: 20px;
+}
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .login-form {
+    width: fit-content;
+    margin-bottom: 20px;
+    padding: 10px 0 10px 0 !important;
+    span {
+      padding-bottom: 10px;
+    }
+    button {
+      margin-right: 18px;
+    }
+    input {
+      margin: 2px 0 2px 0;
+    }
+  }
+  .title {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,162 @@
+.mysites-form {
+    display: flex;
+    margin-left: auto;
+    width: 80%;
+    height: auto;
+    background: $dark-color;
+    color: $text-color;
+    flex-direction: column;
+    font-size: 20px;
+    border: $border;
+    margin-right: 30px;
+  }
+  .mysites-header {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    padding: 20px;
+    border-bottom: $border;
+  }
+  .mysites-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex-direction: column;
+    background: $grey-color;
+    transition: height 0.2s ease-out;
+    transition: margin 0.2s ease-out;
+  
+    overflow: hidden;
+    height: 0;
+  }
+  .mysites-body.active {
+    margin: 5px;
+    height: 123px;
+  }
+  
+  .mysites-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-top: 30px;
+  }
+  
+  .open-icon {
+    width: $button-size;
+    height: $button-size;
+    background-color: $grey-color;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 4px 2px 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ($text-color);
+    transition: $speed;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .open-icon.active {
+    background: $light-grey;
+    transform: rotate(180deg);
+    transition: $speed;
+  }
+  #icons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    margin: auto;
+    padding: 0 15px 0 0;
+  }
+  .body-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    border-bottom: 1.5px solid #363535;
+    > span {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 18px 0 18px 20px;
+    }
+  }
+  
+  .icons-body {
+    background-color: $dark-color;
+    width: $button-size;
+    height: $button-size;
+    border-radius: 50%;
+    margin: 5px 2px 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:active {
+      background: $light-grey;
+      transition: 10ms;
+    }
+  }
+  .body-icons {
+    width: 150px;
+    align-items: center;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+  
+    span {
+      display: flex;
+      justify-content: center;
+      width: $button-size;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+  .clipboard-body {
+    top: 800px;
+    overflow: hidden;
+    position: fixed;
+    margin-right: 0;
+    height: 45px;
+    width: auto;
+    background: $dark-color;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    padding: 2px 10px 2px 5px;
+    transition: $speed;
+    right: -190px;
+  }
+  .clipboard-body.active {
+    right: 0;
+  }
+  
+  .clipboard-icon {
+    background-color: rgb(38, 175, 45);
+    margin: 0 20px 0 5px;
+  
+    font-size: 1.5rem;
+    border-radius: 50%;
+    margin: 5px 2px 2px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .clipboard-line {
+    width: 4px;
+    height: 100%;
+    background-color: $light-grey;
+    margin: 2px 5px 2px 0;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .clipboard-body {
+      top: 600px;
+    }
+
+    .mysites-form{
+      width: 100%;
+    }
+  }
+  

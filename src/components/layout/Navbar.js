@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-export default function Navbarmenu(props) {
+export default function Navbar(props) {
     return (
        <nav className="navbar">
-           <ul className="navbar-nav" >{props.children}</ul>
+           <div className="navbar-nav" >{props.children}</div>
           
        </nav>
     )

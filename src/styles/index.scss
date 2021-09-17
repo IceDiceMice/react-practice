@@ -1,0 +1,191 @@
+@import "varibles.scss";
+@import "contacts.scss";
+@import "payment.scss";
+@import "study.scss";
+@import "auth.scss";
+@import "profile.scss";
+@import "mysites.scss";
+@import "post.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $light-grey;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  background: $grey-color;
+  color: $text-color;
+  font-size: 15px;
+  border-radius: $border-radius;
+  border: $border;
+  &:hover {
+    background: $light-grey;
+  }
+}
+
+a {
+  color: ($text-color);
+  text-decoration: none;
+  font-size: 12px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: $border-radius;
+}
+label {
+  width: 90%;
+}
+//layout
+.navbar {
+  height: $nav-size;
+  background-color: $dark-color;
+  padding: 0 1rem;
+  border-bottom: $border;
+}
+.navbar-nav {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav.item {
+  width: $nav-size * 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-button {
+  width: $button-size;
+  height: $button-size;
+  background-color: $grey-color;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 4px 2px 2px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ($text-color);
+  cursor: pointer;
+  &:hover {
+    background-color: $light-grey;
+  }
+}
+.icon-button svg {
+  fill: $text-color;
+  width: 20px;
+  height: 20px;
+}
+.dropdown {
+  position: absolute;
+  top: 58px;
+  width: 200px;
+  transform: translate(-45%);
+  background: $dark-color;
+  border-radius: $border-radius;
+  padding: 1rem;
+  overflow: hidden;
+  right: -50px;
+  border: $border;
+  z-index: 2;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.navbar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    color: $text-color;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+}
+.side-menu {
+  width: 250px;
+  background: $dark-color;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  opacity: 100%;
+  border-right: $border;
+  z-index: 2;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.side-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 8px 8px 16px;
+  list-style: none;
+  height: 60px;
+  transition: background $speed;
+  &:hover {
+    background: $light-grey;
+  }
+  svg {
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+  }
+}
+.logout {
+  color: rgb(173, 33, 33);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 8px 8px 16px;
+  list-style: none;
+  height: 60px;
+  transition: background $speed;
+  &:hover {
+    background: lighten(rgb(173, 33, 33), 25%);
+  }
+}
+.sidebar-toggle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 58.5px;
+  padding-left: 10px;
+}
+
+.side-menu-items {
+  width: 95%;
+  height: 95%;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .title{
+    padding: 5px;
+  }
+  .dropdown{
+    right: -75px;
+  }
+}

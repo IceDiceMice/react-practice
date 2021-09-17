@@ -1,16 +1,22 @@
-import './App.scss';
-import React from "react";
+import React,{useState} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Contacts from './components/Contacts';
-import Main from './components/Main';
-import Auth from './components/Auth';
-import Study from './components/Study';
-import Profile from './components/Profile';
-import MySites from './components/MySites';
-import Payment from './components/Payment';
-
+import Contacts from './components/pages/Contacts';
+import Main from './components/pages/Main';
+import Auth from './components/pages/Auth';
+import Study from './components/pages/Study';
+import Profile from './components/pages/Profile';
+import MySites from './components/pages/MySites';
+import Payment from './components/pages/Payment';
+import Post from './components/pages/Post'
 function App() {
+  const [sidebar, setSidebar]= useState(false)
+  const [open, setOpen] = useState(false);
+const handleClick = ()=>{
+  setSidebar(false);
+  setOpen(false)
+}
   return (
+    <div className="wrapper" onClick={handleClick}>
     <Router>
       <Switch>
         <Route exact path="/">
@@ -18,27 +24,31 @@ function App() {
         </Route>
 
         <Route path="/main">
-          <Main />
+          <Main sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
         </Route>
 
         <Route path="/contacts">
-          <Contacts />
+          <Contacts sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
         </Route>
 
         <Route path="/study">
-          <Study />
+          <Study sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+        </Route>
+
+        <Route path="/post/:id" >
+          <Post sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
         </Route>
 
         <Route path="/profile">
-          <Profile />
+          <Profile sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
         </Route>
 
         <Route path="/my-sites">
-          <MySites />
+          <MySites sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
         </Route>
 
         <Route path="/payment">
-          <Payment />
+          <Payment sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
         </Route>
 
         <Route path="*">
@@ -49,6 +59,7 @@ function App() {
     
 
     </Router>
+    </div>
   );
 }
 
