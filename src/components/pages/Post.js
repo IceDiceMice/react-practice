@@ -2,15 +2,10 @@ import React from "react";
 import Menus from "../layout/Menus";
 import { BsPeopleCircle } from "react-icons/bs";
 
-export default function Post({ sidebar, setSidebar, open, setOpen }) {
+export default function Post() {
   return (
     <div>
-      <Menus
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-        open={open}
-        setOpen={setOpen}
-      />
+      <Menus/>
       <div className="post-container">
         <div className="post-header">
           <div className="post-info">

@@ -5,7 +5,7 @@ import { BsClipboard } from "react-icons/bs";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import Clipboard from "../layout/Clipboard";
 
-export default function MySites({ sidebar, setSidebar, open, setOpen }) {
+export default function MySites() {
   const [active, setActive] = useState(false);
   const [close, setClose] = useState(false);
   const [move, setMove] = useState(false);
@@ -15,12 +15,7 @@ export default function MySites({ sidebar, setSidebar, open, setOpen }) {
   };
   return (
     <>
-      <Menus
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-        open={open}
-        setOpen={setOpen}
-      />
+      <Menus/>
       <div className="mysites-block">
         <div className="mysites-form">
           <div className="mysites-header">

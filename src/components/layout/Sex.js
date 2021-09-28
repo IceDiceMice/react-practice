@@ -1,7 +1,8 @@
 import React from 'react'
 
 export default function Sex(props) {
-    const handleClick = ()=>{
+    const handleClick = (e)=>{
+        e.stopPropagation();
         if(props.sex === 'Female') {
             props.setSex('Male')
         }

@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Menus from "../layout/Menus";
 import { BsPeopleCircle } from "react-icons/bs";
 import Sex from "../layout/Sex";
 import { BsFillCaretDownFill } from "react-icons/bs";
+import {MenusContext} from "../../Context"
+export default function Profile() {
 
-export default function Profile({ sidebar, setSidebar, open, setOpen }) {
-  const [active, setActive] = useState(false);
-  const [sex, setSex] = useState("Male");
-
+  const { active, setActive, sex, setSex } = useContext(MenusContext)
   return (
     <>
-      <Menus
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-        open={open}
-        setOpen={setOpen}
-      />
+      <Menus/>
       <form className="info-block">
         <div className="main-info">
           <div className="profile-image">
@@ -42,8 +36,10 @@ export default function Profile({ sidebar, setSidebar, open, setOpen }) {
             </label>
             <div
               className="sex-option"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 setActive(!active);
+
               }}
             >
               {sex}

@@ -3,7 +3,7 @@ import Menus from "../layout/Menus";
 import { AiFillCaretDown } from "react-icons/ai";
 import { BsPeopleCircle } from "react-icons/bs";
 
-export default function Contacts({ sidebar, setSidebar, open, setOpen }) {
+export default function Contacts() {
   const [first, setFirst] = useState(true);
   const [second, setSecond] = useState(false);
   const [active, setActive] = useState(false);
@@ -19,12 +19,7 @@ export default function Contacts({ sidebar, setSidebar, open, setOpen }) {
   };
   return (
     <>
-      <Menus
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-        open={open}
-        setOpen={setOpen}
-      />
+      <Menus/>
       <div className="contacts-body">
         <div className="tabs-header">
           <div className="tabs-bar">

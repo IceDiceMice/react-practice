@@ -4,16 +4,16 @@ import Navbarmenu from "./Navbar";
 import Navitem from "./Navitem";
 import Dropdownmenu from "./Dropdownmenu";
 
-export default function Menus({sidebar,setSidebar,open,setOpen}) {
+export default function Menus() {
   
   return (
     <div >
       <Navbarmenu>
-        <Navitem sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}>
-          <Dropdownmenu setOpen={setOpen}/>
+        <Navitem>
+          <Dropdownmenu />
         </Navitem>
       </Navbarmenu>
-      <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
+      <Sidebar />
     </div>
   );
 }

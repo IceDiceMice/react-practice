@@ -3,16 +3,11 @@ import Menus from "../layout/Menus";
 import { BsPeopleCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-export default function Study({ sidebar, setSidebar, open, setOpen }) {
+export default function Study() {
   const id = 5;
   return (
     <>
-      <Menus
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-        open={open}
-        setOpen={setOpen}
-      />
+      <Menus/>
       <div className="study-body">
         <div className="study-card">
           <div className="contacts-image">

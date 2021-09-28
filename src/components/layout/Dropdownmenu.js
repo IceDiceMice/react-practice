@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Dropdownitem from "./Dropdownitem";
 import { Link } from "react-router-dom";
+import { MenusContext } from "../../Context";
 
-export default function Dropdownmenu({ setOpen }) {
+export default function Dropdownmenu() {
+  const { setOpen } = useContext(MenusContext); /*  */
   const handleClick = () => {
     setOpen(false);
   };

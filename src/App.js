@@ -7,15 +7,21 @@ import Study from './components/pages/Study';
 import Profile from './components/pages/Profile';
 import MySites from './components/pages/MySites';
 import Payment from './components/pages/Payment';
-import Post from './components/pages/Post'
+import Post from './components/pages/Post';
+import {MenusContext} from "./Context"
 function App() {
   const [sidebar, setSidebar]= useState(false)
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(false);
+  const [sex, setSex] = useState("Male");
 const handleClick = ()=>{
   setSidebar(false);
-  setOpen(false)
+  setOpen(false);
+  setActive(false);
 }
+
   return (
+    <MenusContext.Provider value={{sidebar, setSidebar, open, setOpen, active, setActive,sex, setSex}}>
     <div className="wrapper" onClick={handleClick}>
     <Router>
       <Switch>
@@ -24,31 +30,31 @@ const handleClick = ()=>{
         </Route>
 
         <Route path="/main">
-          <Main sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+          <Main/>
         </Route>
 
         <Route path="/contacts">
-          <Contacts sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+          <Contacts/>
         </Route>
 
         <Route path="/study">
-          <Study sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+          <Study/>
         </Route>
 
         <Route path="/post/:id" >
-          <Post sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+          <Post />
         </Route>
 
         <Route path="/profile">
-          <Profile sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+          <Profile/>
         </Route>
 
         <Route path="/my-sites">
-          <MySites sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+          <MySites/>
         </Route>
 
         <Route path="/payment">
-          <Payment sidebar={sidebar} setSidebar={setSidebar} open={open} setOpen={setOpen}/>
+          <Payment/>
         </Route>
 
         <Route path="*">
@@ -60,6 +66,7 @@ const handleClick = ()=>{
 
     </Router>
     </div>
+    </MenusContext.Provider>
   );
 }
 

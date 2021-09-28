@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Menus from "../layout/Menus";
 import Modal from "../layout/Modal";
 
-export default function Payment({ sidebar, setSidebar, open, setOpen }) {
+export default function Payment() {
   const [activeModal, setActiveModal] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,12 +36,7 @@ export default function Payment({ sidebar, setSidebar, open, setOpen }) {
 
   return (
     <>
-      <Menus
-        sidebar={sidebar}
-        setSidebar={setSidebar}
-        open={open}
-        setOpen={setOpen}
-      />
+      <Menus/>
       <div className="payment-container">
         <h1>Tariffs</h1>
         <p className="payment-text">

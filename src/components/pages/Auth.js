@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Sex from "../layout/Sex";
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { MenusContext } from "../../Context";
+
 export default function Login() {
   const [state, setState] = useState(false);
-  const [sex, setSex] = useState("Male");
-  const [active, setActive] = useState(false);
 
+  const { active, setActive,sex, setSex } = useContext(MenusContext)
   const handleSubmit = (e) => {
     e.preventDefault();
     setState(!state);
@@ -37,7 +38,8 @@ export default function Login() {
             <br />
             <div
               className="sex-option"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 setActive(!active);
               }}
             >

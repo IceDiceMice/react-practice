@@ -4,12 +4,15 @@ import { BsPeople } from "react-icons/bs";
 import { BsClipboardData } from "react-icons/bs";
 import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import React from "react";
-
+import React,{useContext} from "react";
 import { BsX } from "react-icons/bs";
+import {MenusContext} from "../../Context"
 
-export default function Sidebar({ sidebar, setSidebar }) {
+export default function Sidebar() {
+  const { sidebar, setSidebar} = useContext(MenusContext)
+
   const showSidebar = () => {
+    
     setSidebar(!sidebar);
   };
 
